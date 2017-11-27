@@ -1,0 +1,96 @@
+.login_container {
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 77px;
+  padding-bottom: 100px;
+  background: #3a6753;
+  background: -moz-linear-gradient(45deg, #3a6753 0%, #45d399 100%);
+  background: -webkit-linear-gradient(45deg, #3a6753 0%,#45d399 100%);
+  background: linear-gradient(45deg, #3a6753 0%,#45d399 100%);
+}
+
+.login_container > img {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.form__login {
+  margin: 0 auto;
+  width: 500px
+}
+
+.login_form_div {
+  /*margin: 0 auto;
+  width: 500px*/
+}
+
+.input-field-login {
+  display: inline-block;
+  margin-left: 15px;
+  width: 91%;
+}
+
+.input-field-login > input[type='email'],
+.input-field-login > input[type='password'] {
+  padding-left: 5px;
+  color: #333;
+  font-size: 16px;
+}
+
+.input-field-login > input[type='email']:active,
+.input-field-login > input[type='password']:active {
+  background-color: transparent;
+}
+
+.input-field-login > input[type='email']:focus,
+.input-field-login > input[type='password']:focus {
+  background-color: transparent;
+}
+
+.icon-user, .icon-key {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  font-size: 24px;
+}
+
+.highlight_icon {
+  color: #6f9 !important;
+}
+
+.login_form_div > button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login_form_field {
+  font-family: 'user-email';
+}
+
+.login_form_field > img {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.login_form_field .alert__inline {
+  padding-left: 40px;
+}
+
+.alert__inline {
+  display: block;
+  margin-top: -10px;
+  color: #75020A;
+}
+
+.login_options {
+  width: 500px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login_options > a {
+  font-size: 16px;
+  color: #fff;
+}
