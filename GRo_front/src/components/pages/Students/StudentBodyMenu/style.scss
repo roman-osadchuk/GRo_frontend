@@ -1,0 +1,23 @@
+.students_nav_menu {
+    width: 96%;
+    margin: 0 auto;
+    
+    > div:first-child {
+        background-color: #ccc !important;
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+
+        > button {
+            
+        }
+    }
+
+    > div:nth-child(2){
+
+        > div {
+            background-color: #FCCF3A !important;
+        }
+        
+    }
+    
+}

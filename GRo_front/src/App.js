@@ -7,48 +7,51 @@ import LoginPage from "./components/pages/Login/LoginPage";
 import SignupPage from "./components/pages/Signup/SignupPage";
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
-import NavigationPanel from "./components/navigation/NavigationPanel";
+import NavigationPanel from "./components/navigation/NavigationPanel/NavigationPanel";
 import NotFoundPage from './components/pages/NotFoundPage/NotFoundPage'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './main_style.scss'
 import './_variables.scss'
 
 
 const App = ({ location, isAuthenticated }) => (
-  <div>
-    {/* {isAuthenticated && <NavigationPanel location={location} />} */}
-    {/* <DashboardPage location={location} /> */}
+  <MuiThemeProvider>
+    <div>
+      {/* {isAuthenticated && <NavigationPanel location={location} />} */}
+      {/* <DashboardPage location={location} /> */}
 
-    <Route
-      location={location}
-      path="/"
-      exact
-      component={HomePage}
-    />
-    <GuestRoute
-      location={location}
-      path="/login"
-      exact
-      component={LoginPage}
-    />
-    <GuestRoute
-      location={location}
-      path="/signup"
-      exact
-      component={SignupPage}
-    />
-    <UserRoute
-      location={location}
-      path="/dashboard"
-      component={NavigationPanel}
-    />
-    <Route exact path="/sign_out" render={() =>  (
-      <Redirect to={{
-        pathname: '/login',
-        state: { from: location }
-        }}
-      />)}
-    />
-  </div>
+      <Route
+        location={location}
+        path="/"
+        exact
+        component={HomePage}
+      />
+      <GuestRoute
+        location={location}
+        path="/login"
+        exact
+        component={LoginPage}
+      />
+      <GuestRoute
+        location={location}
+        path="/signup"
+        exact
+        component={SignupPage}
+      />
+      <UserRoute
+        location={location}
+        path="/dashboard"
+        component={NavigationPanel}
+      />
+      <Route exact path="/sign_out" render={() =>  (
+        <Redirect to={{
+          pathname: '/login',
+          state: { from: location }
+          }}
+        />)}
+      />
+    </div>
+  </MuiThemeProvider>
 );
 
 App.propTypes = {

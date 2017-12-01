@@ -11,7 +11,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    overlay: true
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({

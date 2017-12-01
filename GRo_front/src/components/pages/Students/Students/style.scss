@@ -30,17 +30,32 @@
   color: #666;
 }
 
-.students__header--right {
+.students_header_right {
   display: flex;
   align-items: center;
   margin-right: 20px;
+
+  > a {
+    display: flex;
+    align-items: center;
+
+    > span:first-child {
+      font-size: 20px;
+    }
+
+    > span:first-child {
+
+    }
+  }
 }
 
-.students__header--right > img {
+
+
+.students_header_right > a > img {
 
 }
 
-.students__header--right > span {
+.students_header_right > a > span {
   padding-left: 8px;
   font-size: 15px;
   color: #666;

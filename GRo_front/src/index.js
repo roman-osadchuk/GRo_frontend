@@ -12,6 +12,8 @@ import rootReducer from "./rootReducer";
 import { userLoggedIn } from "./actions/auth";
 import setAuthorizationHeader from "./utils/setAuthorizationHeader";
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
@@ -27,6 +29,8 @@ if (localStorage.bookwormJWT) {
   setAuthorizationHeader(localStorage.bookwormJWT);
   store.dispatch(userLoggedIn(user));
 }
+
+injectTapEventPlugin();
 
 ReactDOM.render(
   <Provider store={store}>

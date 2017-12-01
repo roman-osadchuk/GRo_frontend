@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom"
 import Student from '../Student/Student'
 import menu_pic_1 from '../../../../images/Navigation/menu_pic_1.png'
-import add_class from '../../../../images/Navigation/add_class.png'
 import student_1 from '../../../../images/Students/student_1.png'
 import student_2 from '../../../../images/Students/student_2.png'
 import student_3 from '../../../../images/Students/student_3.png'
@@ -163,9 +163,11 @@ class Students extends Component {
             <img src={menu_pic_1} />
             <span>Students</span>
           </div>
-          <div className="students__header--right">
-            <img src={add_class} />
-            <span>ADD STUDENT</span>
+          <div className="students_header_right">
+            <Link to="/dashboard/add_student">
+              <span className="icon-add-circle"></span>
+              <span>ADD STUDENT</span>
+            </Link>
           </div>
         </div>
         <div className="students__body">
