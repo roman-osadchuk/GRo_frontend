@@ -38,16 +38,11 @@ class LoginForm extends React.Component {
     this.setState({ errors });
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
-      console.log(this.state);
       this.props
         .submit(this.state.data)
         .catch(err => {
-          console.log(err);
           this.setState({ errors: err.response.data.errors, loading: false })
-        }
-          
-          
-        );
+        });
     }
   };
 

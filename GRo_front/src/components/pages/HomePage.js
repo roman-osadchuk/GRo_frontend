@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/auth";
 //import './style.css';
 
+console.log('here');
 
 const HomePage = ({ isAuthenticated, logout, location }) => (
   <div>

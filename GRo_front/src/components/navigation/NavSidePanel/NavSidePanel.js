@@ -1,5 +1,6 @@
 import React from "react"
 import { Route, Link } from "react-router-dom"
+import SignOut from '../SignOut/SignOut'
 import logo_face from '../../../images/Navigation/logo_face.png'
 import '../../../main_style.scss'
 import './style.scss'
@@ -58,12 +59,9 @@ class NavSidePanel extends React.Component {
             </Link>
           </li>
         </ul>
-        <div className="sign_out">
-          <Link to={'/sign_out'}>
-            <i className="material-icons">subdirectory_arrow_left</i>
-            <span>LOG OUT</span>
-          </Link>
-        </div>
+
+        <SignOut />
+
       </aside>
     );
   }

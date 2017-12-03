@@ -75,37 +75,6 @@ aside {
         }
         }
     }
-    .sign_out {
-        position: absolute;
-        left: 50%;
-        bottom: 30px;
-
-        > a {
-        font-family: OpenSansBold;
-        position: relative;
-        left: -50%;
-
-        &:hover {
-            > i {
-            cursor: pointer;
-            color: #35B3BF;
-            }
-            > span {
-            cursor: pointer;
-            color: #35B3BF;
-            }
-        }
-
-        > img {
-            position: relative;
-            top: 3px;
-        }
-        > span {
-            padding-left: 7px;
-            color: #666;
-        }
-        }
-    }
 }
 
 
