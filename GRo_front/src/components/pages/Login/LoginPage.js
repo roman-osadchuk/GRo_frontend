@@ -9,7 +9,7 @@ import './style.scss'
 
 class LoginPage extends React.Component {
   submit = data =>
-    this.props.login(data).then(() => this.props.history.push("/dashboard"));
+    this.props.login(data).then(() => this.props.history.push("/dashboard/students"));
 
   render() {
     return (

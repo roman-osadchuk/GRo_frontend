@@ -14,6 +14,10 @@ const SignOut = ({  logout }) => (
     </div>
 );
 
+function componentWillMount() {
+    
+}
+
 SignOut.propTypes = {
   logout: PropTypes.func.isRequired
 };
