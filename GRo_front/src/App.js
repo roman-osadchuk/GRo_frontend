@@ -43,13 +43,13 @@ const App = ({ location, isAuthenticated }) => (
         path="/dashboard"
         component={NavigationPanel}
       />
-      <Route exact path="/sign_out" render={() =>  (
+      {/* <Route exact path="/sign_out" render={() =>  (
         <Redirect to={{
           pathname: '/login',
           state: { from: location }
           }}
         />)}
-      />
+      /> */}
     </div>
   </MuiThemeProvider>
 );

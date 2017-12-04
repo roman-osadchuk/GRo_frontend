@@ -1,12 +1,12 @@
 .students_nav_menu {
-    width: 96%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 10;
+    width: 96% !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    z-index: 10 !important;
     
     > div:first-child {
-        position: relative;
-        z-index: 10;
+        position: relative !important;
+        z-index: 10 !important;
         background-color: #ccc !important;
         border-top-left-radius: 5px !important;
         border-top-right-radius: 5px !important;
