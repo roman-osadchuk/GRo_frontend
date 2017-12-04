@@ -13,13 +13,15 @@
 
 
         > button {
-            
+            z-index: 20 !important;
         }
     }
 
     > div:nth-child(2){
 
         > div {
+            height: 48px !important;
+            margin-top: -48px !important;
             background-color: #FCCF3A !important;
         }
         
