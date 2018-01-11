@@ -6,7 +6,24 @@ import logo_key from '../../images/Login/logo_key.png'
 import logo_person from '../../images/Login/logo_person.png'
 import spinner from '../../images/Animation/Spinner.gif'
 import Spinner from '../ctas/Spinner'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton';
+import {orange500, blue500} from 'material-ui/styles/colors'
 
+const styles = {
+  errorStyle: {
+    color: orange500,
+  },
+  underlineStyle: {
+    borderColor: orange500,
+  },
+  floatingLabelStyle: {
+    color: orange500,
+  },
+  floatingLabelFocusStyle: {
+    color: blue500,
+  },
+};
 
 
 class LoginForm extends React.Component {
@@ -66,46 +83,44 @@ class LoginForm extends React.Component {
     const { data, errors, loading } = this.state;
 
     return (
-      <form className="form__login" onSubmit={this.onSubmit}>
+      <form className="form_login" onSubmit={this.onSubmit}>
         { errors.global && <AlertMessage text={errors.global} /> }
-        <div className="login_form_div">
-          <div className="login_form_field" error={!!errors.email}>
-            <span className="icon icon-user"></span>
-            <div className="input-field input-field-login">
-              <input
-                id="email"
-                type="email"
-                className="validate"
-                name="email"
-                value={data.email}
-                onChange={this.onChange}
-                onFocus={this.highlightIcon}
-                onBlur={this.blurIcon}
-              />
-              <label htmlFor="email">Email</label>
-            </div>
-            {errors.email && <span className="alert__inline">{errors.email}</span>}
-          </div>
-          <div className="login_form_field" error={!!errors.password}>
-            <span className="icon icon-key"></span>
-            <div className="input-field input-field-login">
-              <input
-                id="password"
-                type="password"
-                className="validate"
-                name="password"
-                value={data.password}
-                onChange={this.onChange}
-                onFocus={this.highlightIcon}
-                onBlur={this.blurIcon}
-              />
-              <label htmlFor="password">Password</label>
-            </div>
-            {errors.password && <span className="alert__inline">{errors.password}</span>}
-          </div>
-          <button type="submit" className="waves-effect waves-light btn-large login_btn">Login</button>
-          { loading && <Spinner /> }
+        <div className="login_form_field" error={!!errors.email}>
+          <span className="icon icon-user"></span>
+          <TextField
+            floatingLabelText="Email"
+            floatingLabelStyle={styles.floatingLabelStyle}
+            floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+            id="email"
+            type="email"
+            className="input-field-email"
+            name="email"
+            value={data.email}
+            onChange={this.onChange}
+            onFocus={this.highlightIcon}
+            onBlur={this.blurIcon}
+          />
+          {errors.email && <span className="alert__inline">{errors.email}</span>}
         </div>
+        <div className="login_form_field" error={!!errors.password}>
+          <span className="icon icon-key"></span>
+          <TextField
+            floatingLabelText="Password"
+            floatingLabelStyle={styles.floatingLabelStyle}
+            floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+            id="password"
+            type="password"
+            className="input-field-password"
+            name="password"
+            value={data.password}
+            onChange={this.onChange}
+            onFocus={this.highlightIcon}
+            onBlur={this.blurIcon}
+          />
+          {errors.password && <span className="alert__inline">{errors.password}</span>}
+        </div>
+        <RaisedButton label="Login" type="submit" fullWidth={true} primary={true} className="login_btn"/>
+        { loading && <Spinner /> }
     </form>
     );
   }
