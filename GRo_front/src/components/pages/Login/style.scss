@@ -51,6 +51,7 @@
 .input-field-email:focus + .icon-user, 
 .input-field-password:active + .icon-key {
   color: red;
+  background-color: yellow;
 }
 
 .highlight_icon {
