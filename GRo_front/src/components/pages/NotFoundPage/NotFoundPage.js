@@ -15,9 +15,11 @@ class NotFoundPage extends Component {
 
   render() {
     return (
-      <div>
-        <div>Page not found</div>
-        <Link to={"/"}>Go Home</Link>
+      <div className="page_not_found_container">
+        <div>
+          <span>Page not found</span>
+          <Link to={"/dashboard/students"}>Go Home</Link>
+        </div>
       </div>
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/Login/LoginPage";
 import SignupPage from "./components/pages/Signup/SignupPage";
@@ -14,47 +14,42 @@ import './main_style.scss'
 import './_variables.scss'
 
 
-const App = ({ location, isAuthenticated }) => (
+const NavigationPanel = ({ location, match, isAuthenticated }) => (
   <MuiThemeProvider>
     <div>
       {/* {isAuthenticated && <NavigationPanel location={location} />} */}
       {/* <DashboardPage location={location} /> */}
+        {/* <Redirect from="/" to="/dashboard" /> */}
+        <Route
+          location={location}
+          path="/"
+          exact
+          component={HomePage}
+        />
+        <Route
+          location={location}
+          path="/login"
+          exact
+          component={LoginPage}
+        />
+        <Route
+          location={location}
+          path="/signup"
+          exact
+          component={SignupPage}
+        />
 
-      <Route
-        location={location}
-        path="/"
-        exact
-        component={HomePage}
-      />
-      <GuestRoute
-        location={location}
-        path="/login"
-        exact
-        component={LoginPage}
-      />
-      <GuestRoute
-        location={location}
-        path="/signup"
-        exact
-        component={SignupPage}
-      />
-      <UserRoute
-        location={location}
-        path="/dashboard"
-        component={NavigationPanel}
-      />
-      {/* <Route exact path="/sign_out" render={() =>  (
-        <Redirect to={{
-          pathname: '/login',
-          state: { from: location }
-          }}
-        />)}
-      /> */}
+        <UserRoute
+          location={location}
+          path="/dashboard"
+          component={NavigationPanel}
+        />
+
     </div>
   </MuiThemeProvider>
 );
 
-App.propTypes = {
+NavigationPanel.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired
   }).isRequired,
@@ -67,4 +62,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(NavigationPanel);
