@@ -16,6 +16,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import LoginPage from "./components/pages/Login/LoginPage";
+import SignupPage from "./components/pages/Signup/SignupPage";
 import NavigationPanel from "./components/navigation/NavigationPanel/NavigationPanel";
 
 const store = createStore(
@@ -52,6 +53,7 @@ const App = props => (
       <MuiThemeProvider>
         <Switch>
           <Route path="/login" component={LoginPage} />
+          <Route path="/signup" component={SignupPage} />
           <UserRoute path="/dashboard" component={NavigationPanel} />
           <Redirect to="/login" />
         </Switch>

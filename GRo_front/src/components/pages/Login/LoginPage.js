@@ -16,6 +16,8 @@ class LoginPage extends React.Component {
       <div className="login_container">
         <img src={Logo} />
 
+        <span className="create_account_title">Login to your account</span>
+
         <LoginForm submit={this.submit} />
 
         <div className="login_options">

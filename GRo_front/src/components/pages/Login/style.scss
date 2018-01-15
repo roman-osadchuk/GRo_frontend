@@ -46,6 +46,7 @@
   display: inline-block;
   margin-left: 15px !important;
   width: 80% !important;
+  background-color: transparent !important;
 }
 
 .input-field-email:focus + .icon-user, 
@@ -57,11 +58,6 @@
 .highlight_icon {
   color: #6f9 !important;
 }
-
-/* .login_form_div > button {
-  width: 100%;
-  margin-top: 20px;
-} */
 
 .alert__inline {
   display: block;

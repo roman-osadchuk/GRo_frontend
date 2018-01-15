@@ -4,6 +4,25 @@ import isEmail from "validator/lib/isEmail";
 import InlineError from "../messages/InlineError";
 import logo_key from '../../images/Login/logo_key.png';
 import logo_person from '../../images/Login/logo_person.png';
+import Spinner from '../ctas/Spinner'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
+import {orange200, blue700} from 'material-ui/styles/colors'
+
+const styles = {
+  errorStyle: {
+    color: orange200,
+  },
+  underlineStyle: {
+    borderColor: orange200,
+  },
+  floatingLabelStyle: {
+    color: orange200,
+  },
+  floatingLabelFocusStyle: {
+    color: blue700,
+  },
+};
 
 class SignupForm extends React.Component {
   state = {
@@ -49,45 +68,43 @@ class SignupForm extends React.Component {
 
   render() {
     const { data, errors, loading } = this.state;
-    //console.log(loading);
-    //console.log(errors);
-
+    
     return (
-      <form className="form__login" onSubmit={this.onSubmit} loading={loading}>
-        <div className="login_form_div">
-          <div className="login_form_field" error={!!errors.email}>
-            <img src={logo_key} />
-            <div className="input-field input-field-login">
-              <input
-                id="email"
-                type="email"
-                className="validate"
-                name="email"
-                value={data.email}
-                onChange={this.onChange}
-              />
-              <label htmlFor="email">Email</label>
-            </div>
-            {errors.email && <InlineError text={errors.email} />}
-          </div>
-          <div className="login_form_field" error={!!errors.password}>
-            <img src={logo_person} />
-            <div className="input-field input-field-login">
-              <input
-                id="password"
-                type="password"
-                className="validate"
-                name="password"
-                value={data.password}
-                onChange={this.onChange}
-              />
-              <label htmlFor="password">Password</label>
-            </div>
-            {errors.password && <InlineError text={errors.password} />}
-          </div>
-          <button type="submit" className="waves-effect waves-light btn-large login_btn">Sign Up</button>
+      <form className="form_login" onSubmit={this.onSubmit}>
+        { errors.global && <AlertMessage text={errors.global} /> }
+        <div className="login_form_field" error={!!errors.email}>
+          <span className="icon icon-user"></span>
+          <TextField
+            floatingLabelText="Email"
+            floatingLabelStyle={styles.floatingLabelStyle}
+            floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+            id="email"
+            type="email"
+            className="input-field-email"
+            name="email"
+            value={data.email}
+            onChange={this.onChange}
+          />
+          {errors.email && <span className="alert__inline">{errors.email}</span>}
         </div>
-    </form>
+        <div className="login_form_field" error={!!errors.password}>
+          <span className="icon icon-key"></span>
+          <TextField
+            floatingLabelText="Email"
+            floatingLabelStyle={styles.floatingLabelStyle}
+            floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+            id="password"
+            type="password"
+            className="input-field-email"
+            name="password"
+            value={data.password}
+            onChange={this.onChange}
+          />
+          {errors.password && <span className="alert__inline">{errors.password}</span>}
+        </div>
+        <RaisedButton label="Sign Up" type="submit" fullWidth={true} primary={true} className="login_btn"/>
+        { loading && <Spinner /> }
+      </form>
     );
   }
 }
